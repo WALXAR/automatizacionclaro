@@ -51,9 +51,12 @@ Param(
          }
  
  #Step 2
+   
              LogWrite "Descomprimiento los binarios en $installPath"
          Try{
-             Expand-Archive -Path $outPath -DestinationPath $installPath -Force
+             #Expand-Archive -Path $outPath -DestinationPath $installPath -Force
+             [System.Reflection.Assembly]::LoadWithPartialName('System.IO.Compression.FileSystem')
+             [System.IO.Compression.ZipFile]::ExtractToDirectory($outPath, $installPath)
              LogWrite "Descompresion exitosa en $installPath"
          }
          Catch{
