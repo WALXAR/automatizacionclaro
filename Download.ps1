@@ -6,7 +6,7 @@
 # Step 2 Expand Files
 # Step 3 Change the Name of Agents
 # Step 4 Install
-# Step 5 Start Services
+# Step 5 Start Services all
 
 
 
@@ -17,7 +17,7 @@ Param(
     [string]$appPath= "Binarios/Automic.zip",
     [string]$user = "",
     [string]$token = "uvay7nxx5zq3mgktj66lnlsmr5ouhins3n5z43pekg26judfzyca",
-    [string]$outPath = "$env:temp",
+    [string]$outPath = [System.Environment]::GetEnvironmentVariable('TEMP','Machine'),
     [string]$agentName = "$(Get-Content env:computername)",
     [string]$installPath = "C:\"
  
