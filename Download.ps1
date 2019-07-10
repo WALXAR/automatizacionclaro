@@ -32,8 +32,7 @@ Param(
     Add-content $Logfile -value "$date    $logstring"
  }
  
-reg add hklm\software\microsoft\.netframework /v OnlyUseLatestCLR /t REG_DWORD /d 1
-reg add hklm\software\wow6432node\microsoft\.netframework /v OnlyUseLatestCLR /t REG_DWORD /d 1
+
  
  #Step 1
      LogWrite "Iniciando Descarga de Binarios"
@@ -84,6 +83,5 @@ reg add hklm\software\wow6432node\microsoft\.netframework /v OnlyUseLatestCLR /t
  
      Start-Service -Name "UC4.ServiceManager.UC4" 
  
- reg add hklm\software\microsoft\.netframework /v OnlyUseLatestCLR /t REG_DWORD /d 0
-reg add hklm\software\wow6432node\microsoft\.netframework /v OnlyUseLatestCLR /t REG_DWORD /d 0
+
  
