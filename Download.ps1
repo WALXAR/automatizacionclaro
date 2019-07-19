@@ -69,6 +69,7 @@ Param(
  #TO DO Recursive or defined?
 
  ((Get-Content -path "$($installPath)Automic\Agents\windows\bin\UCXJWX6.ini" -Raw) -replace 'CLAROAGENT',$agentName) | Set-Content -Path "$($installPath)Automic\Agents\windows\bin\UCXJWX6.ini"
+ ((Get-Content -path "$($installPath)Automic\Agents\windows\bin\UCXJWX6.ini" -Raw) -replace '172.26.28.23','172.23.3.191') | Set-Content -Path "$($installPath)Automic\Agents\windows\bin\UCXJWX6.ini"
  ((Get-Content -path "$($installPath)Automic\ServiceManager\bin\uc4.smc" -Raw) -replace 'CLAROAGENT',$agentName) | Set-Content -Path "$($installPath)Automic\ServiceManager\bin\uc4.smc"
  ((Get-Content -path "$($installPath)Automic\ServiceManager\bin\UC4.smd" -Raw) -replace 'CLAROAGENT',$agentName) | Set-Content -Path "$($installPath)Automic\ServiceManager\bin\UC4.smd"
  ((Get-Content -path "$($installPath)Automic\Agents\windows\bin\UCXJWX6.kstr" -Raw) -replace 'CLAROAGENT',$agentName) | Set-Content -Path "$($installPath)Automic\Agents\windows\bin\UCXJWX6.kstr"
