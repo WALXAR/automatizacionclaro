@@ -123,6 +123,11 @@ If(-Not $installed) {
     LogWrite = "Setting env ..."
     [Environment]::SetEnvironmentVariable('Path', $envPath, 'Machine')        
     
+    $envJavaHome += "C:\progra~1\Java\x64\jdk1.8.1_44"  
+    LogWrite = "Setting env Java Home..."
+    [Environment]::SetEnvironmentVariable('JAVA_HOME', $envJavaHome, 'Machine')    
+   
+   
 }
 
 
