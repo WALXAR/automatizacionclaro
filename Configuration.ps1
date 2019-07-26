@@ -89,7 +89,7 @@ Param(
      }
 
  #Install JDK Silenty
-  & "$($outPath)\jdk-8u144-windows-x64.exe" /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature" INSTALLDIR=C:\progra~1\Java\x64\jdk1.8.1_44 /INSTALLDIRPUBJRE=C:\progra~2\Java\x64\jre1.8.1_44
+  & "$($outPath)\jdk-8u144-windows-x64.exe" /s ADDLOCAL="ToolsFeature,SourceFeature,PublicjreFeature" INSTALLDIR=C:\progra~1\Java\x64\jdk1.8.1_44 /INSTALLDIRPUBJRE=C:\progra~1\Java\x64\jre1.8.1_44
  #Wait for JDK instalation
  LogWrite "Waiting 120 Seconds for continue"
  Start-Sleep -s 120 
