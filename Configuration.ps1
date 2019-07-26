@@ -34,7 +34,22 @@ Param(
     Add-content $Logfile -value "$date    $logstring"
  }
  
-#Step 0
+ #Step 0
+ 
+ 
+ if ( (Get-WMIObject win32_operatingsystem).name -like "*2008*" )
+ {
+ LogWrite "Windows 2008 is Detected"
+ foreach ($disk in get-wmiobject Win32_DiskDrive -Filter "Partitions = 0")
+    { 
+   $disk.DeviceID
+   $disk.Index
+   "select disk "+$disk.Index+"`r clean`r create partition primary`r format fs=ntfs unit=65536 quick`r active`r assign letter=F" | diskpart
+    }
+}
+else
+ {
+ LogWrite "Windows 2012 is Detected"
  $disks = Get-Disk | Where-Object partitionstyle -eq 'raw' | Sort-Object number
 
  $letters = 70..89 | ForEach-Object { [char]$_ }
@@ -49,7 +64,7 @@ Param(
      Format-Volume -FileSystem NTFS -NewFileSystemLabel $labels[$count] -Confirm:$false -Force
  $count++
  }
-
+}
  #end Step 0
 
  #Step 0.1
